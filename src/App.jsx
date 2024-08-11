@@ -18,41 +18,41 @@ import Singlegif from './pages/Single-gif'
 //search
 //single gif
 // favourites
-const router= createBrowserRouter([
+const router = createBrowserRouter([
   {
-    element:<AppLayout/>,
-    children:[
+    element: <AppLayout />,
+    children: [
       {
-        path:'/',
-        element:<Home/>
+        path: '/',
+        element: <Home />
       },
       {
-        path:'/Categories',
-        element:<Categories/>
+        path: '/Categories',
+        element: <Categories />
       },
       {
-        path:'/Favourites',
-        element:<Favourites/>
+        path: '/Favourites',
+        element: <Favourites />
       },
       {
-        path:'/:type/:slug',
-        element:<Singlegif/>
+        path: '/:type/:slug',
+        element: <Singlegif />
       },
       {
-        path:'/Search/:query',
-        element:<Search/>
+        path: '/Search/:query',
+        element: <Search />
       }
     ]
   }
 ])
 function App() {
-  
+
 
   return (
     <RouterProvider router={router} />
-   
 
-   
+
+
   )
 }
 
