@@ -9,6 +9,7 @@ import Favourites from './pages/Favourites'
 import Search from './pages/Search'
 import Home from './pages/Home'
 import Singlegif from './pages/Single-gif'
+import Gifprovider from './Context/Gif-context'
 
 
 
@@ -49,11 +50,13 @@ function App() {
 
 
   return (
+    <Gifprovider>
     <RouterProvider router={router} />
+    </Gifprovider>
 
 
 
-  )
+  );
 }
 
 export default App
