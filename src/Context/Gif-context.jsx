@@ -4,7 +4,7 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 const Gifcontext = createContext();
 
 const Gifprovider = ({ children }) => {
-  const [gifs, setgifs] = useState([]);
+  const [gifs, setGifs] = useState([]);
   const [filter, setfilter] = useState("gifs");
   const [favourites, setfavourites] = useState([]);
 
@@ -13,7 +13,7 @@ const Gifprovider = ({ children }) => {
 
   return (
     <Gifcontext.Provider
-      value={{ gf, gifs, setgifs, filter, setfilter, favourites }}
+      value={{ gf, gifs, setGifs, filter, setfilter, favourites }}
     >
       {children}
     </Gifcontext.Provider>
