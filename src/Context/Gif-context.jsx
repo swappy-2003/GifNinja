@@ -5,7 +5,7 @@ const Gifcontext = createContext();
 
 const Gifprovider = ({ children }) => {
   const [gifs, setGifs] = useState([]);
-  const [filter, setfilter] = useState("gifs");
+  const [filter, setFilter] = useState("gifs");
   const [favourites, setfavourites] = useState([]);
 
   const gf = new GiphyFetch(import.meta.env.VITE_GIPHY_KEY);
@@ -13,7 +13,7 @@ const Gifprovider = ({ children }) => {
 
   return (
     <Gifcontext.Provider
-      value={{ gf, gifs, setGifs, filter, setfilter, favourites }}
+      value={{ gf, gifs, setGifs, filter, setFilter, favourites }}
     >
       {children}
     </Gifcontext.Provider>
