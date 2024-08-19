@@ -7,3 +7,9 @@
         @apply bg-gradient-to-r from-teal-600 via-blue-600 to-pink-600;
     }
 }
+.faded-text{
+    @apply font-bold text-sm text-gray-400;
+}
+.divider{
+    @apply w-full h-0.5 my-6   bg-zinc-100;
+}
