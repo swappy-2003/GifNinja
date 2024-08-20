@@ -12,8 +12,8 @@ const Gifprovider = ({ children }) => {
 
   const addToFavorites = (id) => {
     const updatedFavorites = favourites.includes(id)
-      ? favourites.filter((itemId) => itemId !== id)  // Remove from favorites
-      : [...favourites, id];  // Add to favorites
+      ? favourites.filter((itemId) => itemId !== id)
+      : [...favourites, id];
 
     localStorage.setItem("favoriteGIFs", JSON.stringify(updatedFavorites));
     setFavourites(updatedFavorites);
@@ -38,4 +38,3 @@ export const GifState = () => {
 };
 
 export default Gifprovider;
-    

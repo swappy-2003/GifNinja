@@ -46,7 +46,9 @@ function Favourites() {
             <Gif gif={gif} key={gif.id} className="w-full" />
           ))}
         </div>
-      ) : (
+      ) 
+      : 
+      (
         <div className="text-center text-gray-500 py-10">
           No favorite GIFs yet.
         </div>
