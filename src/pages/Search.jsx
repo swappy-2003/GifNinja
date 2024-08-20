@@ -15,7 +15,7 @@ const Search = () => {
         sort: "relevant",
         lang: "en",
         type: filter,
-        limit: 30,
+        limit: 30000,
       });
       setSearchResults(data); // Corrected state update
     } catch (error) {
