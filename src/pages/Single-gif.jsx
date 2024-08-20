@@ -22,7 +22,7 @@ const SingleGif = () => {
       try {
         const gifId = slug.split("-").pop();  // Extract the last part of the slug
         const { data } = await gf.gif(gifId);
-        const { data: related } = await gf.related(gifId, { limit: 10 });
+        const { data: related } = await gf.related(gifId, { limit: 50 });
 
         setGif(data);
         setRelatedGifs(related);
@@ -37,6 +37,24 @@ const SingleGif = () => {
       console.error("Invalid content type");
     }
   }, [type, slug, gf]);
+
+  const handleShare = () => {
+    const gifUrl = gif.url;  // Assuming the gif object contains a url property
+    navigator.clipboard.writeText(gifUrl).then(() => {
+      alert("GIF URL copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy GIF URL.");
+    });
+  };
+
+  const handleEmbed = () => {
+    const embedCode = `<iframe src="${gif.embed_url}" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="${gif.url}">via GIPHY</a></p>`;
+    navigator.clipboard.writeText(embedCode).then(() => {
+      alert("Embed code copied to clipboard!");
+    }).catch(() => {
+      alert("Failed to copy embed code.");
+    });
+  };
 
   return (
     <div>
@@ -137,12 +155,12 @@ const SingleGif = () => {
                 />
                 Favourites
               </button>
-              <button className="flex gap-6 items-center font-bold text-lg">
-                <FaPaperPlane size={25}/>
+              <button onClick={handleShare} className="flex gap-6 items-center font-bold text-lg">
+                <FaPaperPlane size={25} />
                 Share
               </button>
-              <button className="flex gap-6 items-center font-bold text-lg">
-                <IoCodeSharp size={30}/>
+              <button onClick={handleEmbed} className="flex gap-6 items-center font-bold text-lg">
+                <IoCodeSharp size={30} />
                 Embed
               </button>
             </div>
